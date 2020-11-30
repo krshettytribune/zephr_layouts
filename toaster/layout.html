@@ -7,8 +7,8 @@
   text-align: center;
   font: 400 18px/24px {{font}}, Arial, sans-serif;
   box-sizing: border-box;
-  {{bgimage}}
-  background-color: {{bgcolor}};
+  background: {{background-image}}
+  background-color: {{background-color}};
   position: fixed;
   bottom: 0;
   left: 0;
@@ -38,7 +38,7 @@
   font-weight: 700;
 }
 .met-rule-{{i}} mark {
-  color: {{txcolor}};
+  color: {{highlight-color}};
   background: none;
 }
 .met-toast-left,
@@ -56,7 +56,7 @@
   white-space: nowrap;
   width: 160px;
   letter-spacing: 0px; /* override Arc's reduced space */
-  color: {{side_title_color}};
+  color: {{tagline-color}};
 }
 .met-toast-left:before {
   content: "";
@@ -75,8 +75,8 @@
   width: 256px;
 }
 .met-rule-{{i}} [data-met-return] {
-  background-color: {{cta_bg_color}};
-  color:{{cta_color}};
+  background-color: {{cta-background-color}};
+  color:{{cta-text-color}};
   font-size: 14px;
   line-height: 40px;
   text-decoration: none;
@@ -101,7 +101,7 @@
 }
 
 .met-toast-right div:last-child {
-  color:{{body_color}};
+  color:{{description-color}};
 }
  
 .met-rule-{{i}} .met-flyout-close svg {
@@ -159,15 +159,15 @@
 </style>
 
 <div class="met-toast-var{{variation}}" role="complementary" aria-labelledby="trialHeading">
-  <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close_color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
+  <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close-button-color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
   <h2 class="met-toast-left">
-    {{side_title}}
+    {{tagline}}
   </h2>
   <div class="met-toast-right">
     <div>{{title}}</div>
-    <div>{{body}}</div>
+    <div>{{description}}</div>
   </div>
-  <a href="{{subscribeUrl}}" data-met-return>{{button}}</a>
+  <a href="{{subscribe-url}}" data-met-return>{{cta-button}}</a>
 </div>
 
 <script>
