@@ -1,5 +1,5 @@
 <style>
-.met-flyout-toast {
+.met-rule-{{i}} {
   height: 104px;
   width: 100%;
   padding: 24px 40px;
@@ -20,11 +20,11 @@
   transition: transform 375ms cubic-bezier(0.2, 0.84, 0.46, 0.99);
   z-index: {{zindex}};
 }
-.met-flyout-toast * {
+.met-rule-{{i}} * {
   font: inherit;
   box-sizing: inherit;
 }
-.met-flyout-toast.closed {
+.met-rule-{{i}}.closed {
   -webkit-transform: translateY(150%);
   -moz-transform: translateY(150%);
   -ms-transform: translateY(150%);
@@ -34,10 +34,10 @@
   -moz-transition: -moz-transform 0.15s linear;
   transition: transform 0.15s linear;
 }
-.met-flyout-toast b {
+.met-rule-{{i}} b {
   font-weight: 700;
 }
-.met-flyout-toast mark {
+.met-rule-{{i}} mark {
   color: {{highlight-color}};
   background: none;
 }
@@ -45,8 +45,8 @@
 .met-toast-right {
   float: left;
 }
-.met-flyout-toast .met-flyout-close,
-.met-flyout-toast [data-met-return] {
+.met-rule-{{i}} .met-flyout-close,
+.met-rule-{{i}} [data-met-return] {
   float: right;
 }
 .met-toast-left {
@@ -74,7 +74,7 @@
   line-height: 24px;
   width: 256px;
 }
-.met-flyout-toast [data-met-return] {
+.met-rule-{{i}} [data-met-return] {
   background-color: {{cta-background-color}};
   color:{{cta-text-color}};
   font-size: 14px;
@@ -85,7 +85,7 @@
   white-space: nowrap;
   width: 344px;
 }
-.met-flyout-toast .met-flyout-close {
+.met-rule-{{i}} .met-flyout-close {
     cursor: pointer;
     display: table-cell;
     position: absolute;
@@ -104,7 +104,7 @@
   color:{{description-color}};
 }
  
-.met-flyout-toast .met-flyout-close svg {
+.met-rule-{{i}} .met-flyout-close svg {
    height: 20px;
 }
      
@@ -119,30 +119,30 @@
 
       
 @media only screen and (max-width: 839px) {
-  .met-flyout-toast {
+  .met-rule-{{i}} {
     background-image: none;
     padding: 24px 14px;
     /*z-index: 5000001; Commented this whilst zindex dynamic, formerly 30 until an ad started appearing over it */
   }
-  .met-flyout-toast [data-met-return] {
+  .met-rule-{{i}} [data-met-return] {
     width: 96px;
   }
   .met-toast-varD [data-met-return] {
     width: 232px;
   }
 
-  .met-flyout-toast .met-flyout-close {
+  .met-rule-{{i}} .met-flyout-close {
     right: 10px;
     top: 5px;
   }
 }
 @media only screen and (max-width: 547px) {
-  .met-flyout-toast {
+  .met-rule-{{i}} {
     display: none;
   }
 }
 </style>
-<div class="met-flyout-toast">
+
 <div class="met-toast" role="complementary" aria-labelledby="trialHeading">
   <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close-button-color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
   <h2 class="met-toast-left">
@@ -153,7 +153,6 @@
     <div>{{description}}</div>
   </div>
   <a href="{{subscribe-url}}" data-met-return>{{cta-button}}</a>
-</div>
 </div>
 
 <script>
