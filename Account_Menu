@@ -52,7 +52,7 @@
     display: inline-block;
     border-radius: 3px;
     font: 400 11px/40px Lato, Arial, sans-serif;
-    background-color: ${bgcolor};
+    background-color: {{bgcolor}};
     text-decoration: none;
     white-space: nowrap;
     letter-spacing: 1px;
@@ -117,7 +117,7 @@
   <li id="met-account-manage-sub">{{subdomain}}</li>
   <li class="met-account-newsletters-var{{variation}}"><a href="#" data-reg-handler="newsletterHandler">Newsletters</a></li>
   <li class="met-account-extra">{{contactUs}}</li>
-  <li class="met-button-container-var${variation}"><a class="met-button-var{{variation}}" href="{{subscribeUrl}}" data-met-return>{{button}}</a></li>
+  <li class="met-button-container-var{{variation}}"><a class="met-button-var{{variation}}" href="{{subscribeUrl}}" data-met-return>{{button}}</a></li>
   <li><a href="#" data-reg-handler="signOutHandler">LOG OUT</a></li>
 </ul>
 
