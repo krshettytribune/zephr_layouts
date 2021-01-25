@@ -142,18 +142,19 @@
   }
 }
 </style>
-
-<div class="met-toast" role="complementary" aria-labelledby="trialHeading">
-  <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close-button-color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
-  <h2 class="met-toast-left">
-     <b>{{tagline}}</b>
-  </h2>
-  <div class="met-toast-right">
-    <div><b>{{title}}</b></div>
-    <div>{{description}}</div>
+<div class="met-flyout-toaster">
+  <div class="met-toast" role="complementary" aria-labelledby="trialHeading">
+    <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close-button-color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
+    <h2 class="met-toast-left">
+       <b>{{tagline}}</b>
+    </h2>
+    <div class="met-toast-right">
+      <div><b>{{title}}</b></div>
+      <div>{{description}}</div>
+    </div>
+    <a href="{{subscribe-url}}" data-met-return><b>{{cta-button}}</b></a>
   </div>
-  <a href="{{subscribe-url}}" data-met-return><b>{{cta-button}}</b></a>
-</div>
+ </div>
 
 <script>
     (function() {
