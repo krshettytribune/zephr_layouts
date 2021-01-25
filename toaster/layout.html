@@ -1,5 +1,5 @@
 <style>
-.met-rule-{{i}} {
+.met-toast {
   height: 104px;
   width: 100%;
   padding: 24px 40px;
@@ -20,11 +20,11 @@
   transition: transform 375ms cubic-bezier(0.2, 0.84, 0.46, 0.99);
   z-index: {{zindex}};
 }
-.met-rule-{{i}} * {
+.met-toast * {
   font: inherit;
   box-sizing: inherit;
 }
-.met-rule-{{i}}.closed {
+.met-toast.closed {
   -webkit-transform: translateY(150%);
   -moz-transform: translateY(150%);
   -ms-transform: translateY(150%);
@@ -34,10 +34,10 @@
   -moz-transition: -moz-transform 0.15s linear;
   transition: transform 0.15s linear;
 }
-.met-rule-{{i}} b {
+.met-toast b {
   font-weight: 700;
 }
-.met-rule-{{i}} mark {
+.met-toast mark {
   color: {{highlight-color}};
   background: none;
 }
@@ -45,8 +45,8 @@
 .met-toast-right {
   float: left;
 }
-.met-rule-{{i}} .met-flyout-close,
-.met-rule-{{i}} [data-met-return] {
+.met-toast .met-flyout-close,
+.met-toast [data-met-return] {
   float: right;
 }
 .met-toast-left {
@@ -74,7 +74,7 @@
   line-height: 24px;
   width: 256px;
 }
-.met-rule-{{i}} [data-met-return] {
+.met-toast [data-met-return] {
   background-color: {{cta-background-color}};
   color:{{cta-text-color}};
   font-size: 14px;
@@ -85,7 +85,7 @@
   white-space: nowrap;
   width: 344px;
 }
-.met-rule-{{i}} .met-flyout-close {
+.met-toast .met-flyout-close {
     cursor: pointer;
     display: table-cell;
     position: absolute;
@@ -104,7 +104,7 @@
   color:{{description-color}};
 }
  
-.met-rule-{{i}} .met-flyout-close svg {
+.met-toast .met-flyout-close svg {
    height: 20px;
 }
      
@@ -119,25 +119,25 @@
 
       
 @media only screen and (max-width: 839px) {
-  .met-rule-{{i}} {
+  .met-toast {
     background-image: none;
     padding: 24px 14px;
     /*z-index: 5000001; Commented this whilst zindex dynamic, formerly 30 until an ad started appearing over it */
   }
-  .met-rule-{{i}} [data-met-return] {
+  .met-toast [data-met-return] {
     width: 96px;
   }
-  .met-toast-varD [data-met-return] {
+  .met-toast [data-met-return] {
     width: 232px;
   }
 
-  .met-rule-{{i}} .met-flyout-close {
+  .met-toast .met-flyout-close {
     right: 10px;
     top: 5px;
   }
 }
 @media only screen and (max-width: 547px) {
-  .met-rule-{{i}} {
+  .met-toast {
     display: none;
   }
 }
