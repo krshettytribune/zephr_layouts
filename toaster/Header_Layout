@@ -89,7 +89,7 @@
 <script>
 (() => {
 	let elem = document.querySelector("[data-reg-role='prompt']");
-	let toasterElem = document.querySelector("[data-reg-role='prompt']");
+	let toasterElem = document.querySelector(".met-rule-toast");
 	if(elem){
 	document.querySelector("[data-reg-role='prompt']").appendChild(toasterElem);
       //console.log("elem", elem);
