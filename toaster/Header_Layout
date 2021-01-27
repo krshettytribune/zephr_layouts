@@ -22,16 +22,15 @@
   text-decoration: none;
   white-space: nowrap;
   display: block;
-  {{bgimage}}
-  background-color: {{bgcolor}};
-  color: {{dfcolor}};
+  background-color: {{background-color}};
+  color: {{default-color}};
   letter-spacing: 1px;
 }
 .met-rule-toast [data-met-return] b {
   font-weight: 700;
 }
 .met-rule-toast [data-met-return] mark {
-  color: {{txcolor}};
+  color: {{highlight-color}};
   background: none;
 }
 .met-rule-toast .met-toast-close0 {
@@ -55,7 +54,7 @@
     position: absolute;
     height: 4px;
     top: 50%;
-    background-color: {{close_color}};
+    background-color: {{close-button-color}};
     width: 90%;
 }
   
