@@ -89,7 +89,9 @@
 <script>
 (() => {
 	let elem = document.querySelector("[data-reg-role='prompt']");
+	let toasterElem = document.querySelector("[data-reg-role='prompt']");
 	if(elem){
+	document.querySelector("[data-reg-role='prompt']").appendChild(toasterElem)
       //console.log("elem", elem);
 		if(elem.hasAttribute("data-dss-condense") && elem.getAttribute("data-dss-condense")==="true"){
           document.querySelector(".met-rule-toast").style.height="40px";
