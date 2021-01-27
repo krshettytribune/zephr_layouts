@@ -84,7 +84,7 @@
 	<div class="met-toast-close{{closeable}}">
 	  <a href="#" class="met-flyout-close"></a>
 	</div>
-	<a href="{{subscribeUrl}}" data-met-return><b><mark>{{title}}</mark></b>&nbsp;{{description}}</a>
+	<a href="{{subscribeUrl}}" data-met-return><b><mark>{{tagline}}</mark></b>&nbsp;{{description}}</a>
 </div>
 <script>
 (() => {
