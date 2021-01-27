@@ -90,14 +90,10 @@
 (() => {
 	let elem = document.querySelector("[data-reg-role='prompt']");
 	if(elem){
-	let toasterElem = document.querySelector(".met-rule-toast");
-	document.querySelector("[data-reg-role='prompt']").appendChild(toasterElem);
-      console.log("elem", toasterElem);
-      console.log(document.querySelector("[data-reg-role='prompt']"));
 		if(elem.hasAttribute("data-dss-condense") && elem.getAttribute("data-dss-condense")==="true"){
-          document.querySelector(".met-rule-toast").style.height="40px";
-          document.querySelector(".met-flyout-close").style.display="none";  
-       }
+		  document.querySelector(".met-rule-toast").style.height="40px";
+		  document.querySelector(".met-flyout-close").style.display="none";  
+	       }
 	}
 })();
 </script>
