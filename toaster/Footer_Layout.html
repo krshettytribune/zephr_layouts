@@ -1,5 +1,5 @@
 <style>
-.met-toast {
+.met-footer-toast {
   height: 104px;
   width: 100%;
   padding: 24px 40px;
@@ -7,7 +7,7 @@
   text-align: center;
   font: 400 18px/24px {{font}}, Arial, sans-serif;
   box-sizing: border-box;
-  background-color: {{background-color}} !important;
+  background-color: {{background-color}};
   position: fixed;
   bottom: 0;
   left: 0;
@@ -19,11 +19,11 @@
   transition: transform 375ms cubic-bezier(0.2, 0.84, 0.46, 0.99);
   z-index: {{zindex}};
 }
-.met-toast * {
+.met-footer-toast * {
   font: inherit;
   box-sizing: inherit;
 }
-.met-toast.closed {
+.met-footer-toast.closed {
   -webkit-transform: translateY(150%);
   -moz-transform: translateY(150%);
   -ms-transform: translateY(150%);
@@ -33,10 +33,10 @@
   -moz-transition: -moz-transform 0.15s linear;
   transition: transform 0.15s linear;
 }
-.met-toast b {
+.met-footer-toast b {
   font-weight: 700;
 }
-.met-toast mark {
+.met-footer-toast mark {
   color: {{highlight-color}};
   background: none;
 }
@@ -44,8 +44,8 @@
 .met-toast-right {
   float: left;
 }
-.met-toast .met-flyout-close,
-.met-toast [data-met-return] {
+.met-footer-toast .met-flyout-close,
+.met-footer-toast [data-met-return] {
   float: right;
 }
 .met-toast-left {
@@ -54,7 +54,7 @@
   line-height: 56px;
   white-space: nowrap;
   width: 160px;
-  letter-spacing: 0px; 
+  letter-spacing: 0px; /* override Arc's reduced space */
   color: {{tagline-color}};
 }
 .met-toast-left:before {
@@ -70,10 +70,10 @@
 }
 .met-toast-right {
   padding: 4px 0 0 20px;
-  line-height: 24px !important;
+  line-height: 24px;
   width: 256px;
 }
-.met-toast [data-met-return] {
+.met-footer-toast [data-met-return] {
   background-color: {{cta-background-color}};
   color:{{cta-text-color}};
   font-size: 14px;
@@ -84,7 +84,7 @@
   white-space: nowrap;
   width: 344px;
 }
-.met-toast .met-flyout-close {
+.met-footer-toast .met-flyout-close {
     cursor: pointer;
     display: table-cell;
     position: absolute;
@@ -96,72 +96,86 @@
 }
 
 .met-toast-right div:first-child {
-  color:{{title-color}};
+  color:{{title-color}};;
 }
 
 .met-toast-right div:last-child {
   color:{{description-color}};
 }
  
-.met-toast .met-flyout-close svg {
+.met-footer-toast .met-flyout-close svg {
    height: 20px;
 }
      
-.met-toast .met-toast-right {
+.met-toast-varC .met-toast-left,
+.met-toast-varD .met-toast-left,
+.met-toast-varA .met-toast-right div:last-child {
+  display: none;
+}
+.met-toast-varA .met-toast-right {
   text-align: left;
   line-height: 56px;
   padding-top: 0;
 }
-.met-toast .met-toast-right {
+.met-toast-varB .met-toast-right {
   text-align: left;
 }
-
+.met-toast-varC .met-toast-right {
+  width: 416px;
+  padding-left: 0;
+}
+.met-toast-varD .met-toast-right {
+  width: 280px;
+  padding-left: 0;
+}
+.met-toast-varD [data-met-return] {
+  width: 480px;
+} 
       
 @media only screen and (max-width: 839px) {
-  .met-toast {
+  .met-footer-toast {
     background-image: none;
     padding: 24px 14px;
     /*z-index: 5000001; Commented this whilst zindex dynamic, formerly 30 until an ad started appearing over it */
   }
-  .met-toast [data-met-return] {
+  .met-footer-toast [data-met-return] {
     width: 96px;
   }
-  .met-toast [data-met-return] {
+  .met-toast-varD [data-met-return] {
     width: 232px;
   }
 
-  .met-toast .met-flyout-close {
+  .met-footer-toast .met-flyout-close {
     right: 10px;
     top: 5px;
   }
 }
 @media only screen and (max-width: 547px) {
-  .met-toast {
+  .met-footer-toast {
     display: none;
   }
 }
 </style>
-<div class="met-flyout-toaster">
-  <div class="met-toast" role="complementary" aria-labelledby="trialHeading">
-    <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close-button-color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
-    <h2 class="met-toast-left">
-       <b>{{tagline}}</b>
-    </h2>
-    <div class="met-toast-right">
-      <div><b>{{title}}</b></div>
-      <div>{{description}}</div>
-    </div>
-    <a href="{{subscribe-url}}" data-met-return><b>{{cta-button}}</b></a>
-  </div>
- </div>
-
+<div class="met-flyout met-footer-toast">
+	<div class="met-toast-var{{variation}}" role="complementary" aria-labelledby="trialHeading">
+	  <a href="#" aria-label="Close" class="met-flyout-close met-visually-hidden"><svg viewBox="0 0 25 32" fill="{{close_color}}"><path d="M23.18 23.61q0 .71-.5 1.21l-2.43 2.43q-.5.5-1.21.5t-1.21-.5L12.58 22l-5.25 5.25q-.5.5-1.21.5t-1.21-.5l-2.43-2.43q-.5-.5-.5-1.21t.5-1.21l5.25-5.25-5.25-5.25q-.5-.5-.5-1.21t.5-1.21l2.43-2.43q.5-.5 1.21-.5t1.21.5l5.25 5.25 5.25-5.25q.5-.5 1.21-.5t1.21.5l2.43 2.43q.5.5.5 1.21t-.5 1.21l-5.25 5.25 5.25 5.25q.5.5.5 1.21z"></path></svg>close</a>
+	  <h2 class="met-toast-left" id="trialHeading">
+		<b>{{tagline}}</b>
+	  </h2>
+	  <div class="met-toast-right">
+		 <div><b>{{title}}</b></div>
+		 <div>{{description}}</div>
+	  </div>
+	 <a href="{{subscribe-url}}" data-met-return><b>{{cta-button}}</b></a>
+	</div>
+</div>
 <script>
-    (function() {
-    trb.metering.manager.user.track(function(data) {
-        var rules = trb.registration.config.get('rules');
-        !window.location.hostname.match(/\.p2p\./) && (rules.length > 0) && registration.events.fire('met_toaster_mather', rules.filter(function(rule){return rule.i == {{i}}})[0]._);
-      }); 
-  })();
+//    (function() {
+//    trb.metering.manager.user.track(function(data) {
+//        var rules = trb.registration.config.get('rules');
+//        !window.location.hostname.match(/\.p2p\./) && (rules.length > 0) && registration.events.fire('met_toaster_mather', rules.filter(function(rule){return rule.i == ${i}})[0]._);
+//      }); 
+//  })();
   
   function dummyMethod(){}
   // needs better logic here
