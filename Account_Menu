@@ -1,140 +1,144 @@
 <style>
-  .met-rule-{{i}} {
-    background-color: white;
-    width: 225px;
-    position: absolute;
-    right: 0;
-    top: 45px;
-    box-sizing: border-box;
-    padding: 20px;
-    box-shadow: 0 1px 4px 0 #9B9B9B;
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transition: all 0.3s ease-in-out 0s,visibility 0s linear 0s,z-index 0s linear 0.3s;
-  }
-  .met-rule-{{i}}.closed {
-    visibility: hidden;
-    opacity: 0;
-    z-index: -1;
-    transform: translateY(-2em);
-    transition-delay: 0s,0.3s,0.01s;
-  }
-  .met-rule-{{i}}:before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    right: 20px;
-    border-left: .9em solid transparent;
-    border-right: .9em solid transparent;
-    border-bottom: .6em solid #FFF;
-  }
-  .met-rule-{{i}} ul {
-    list-style: none;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-  }
-  .met-rule-{{i}} li,
-  .met-rule-{{i}} li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font: 600 9px/32px 'Benton Bold', Arial, sans-serif;
-    letter-spacing: 1px;
-    color: #333;
-  }
-  .met-rule-{{i}} li a[data-reg-text] {
-    color: #FF6839;
-  }
-  .met-rule-{{i}} li:last-child a,
-  .met-rule-{{i}} li [data-met-return] {
-    color: {{txcolor}};
-    display: inline-block;
-    border-radius: 3px;
-    font: 400 11px/40px Lato, Arial, sans-serif;
-    background-color: {{bgcolor}};
-    text-decoration: none;
-    white-space: nowrap;
-    letter-spacing: 1px;
-    text-align: center;
-    width: 185px;
-    margin-top: 15px;
-    text-transform: none;
-    overflow: hidden;
-  }
+.met-account-flyout {
+  background-color: white;
+  width: 225px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 1px 4px 0 #9B9B9B;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.3s ease-in-out 0s,visibility 0s linear 0s,z-index 0s linear 0.3s;
+}
+.met-account-flyout.closed {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(-2em);
+  transition-delay: 0s,0.3s,0.01s;
+}
+.met-account-flyout:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  border-left: .9em solid transparent;
+  border-right: .9em solid transparent;
+  border-bottom: .6em solid #FFF;
+}
+.met-account-flyout ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.met-account-flyout li,
+.met-account-flyout li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 600 9px/32px 'Benton Bold', Arial, sans-serif;
+  letter-spacing: 1px;
+  color: #333;
+}
+.met-account-flyout li a[data-reg-text] {
+  color: #FF6839;
+}
+.met-account-flyout li:last-child a,
+.met-account-flyout li [data-met-return] {
+  color: {{text-color}};
+  display: inline-block;
+  border-radius: 3px;
+  font: 400 11px/40px Lato, Arial, sans-serif;
+  background-color: {{background-color}};
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 185px;
+  margin-top: 15px;
+  text-transform: none;
+  overflow: hidden;
+}
   
-  .met-rule-{{i}} li a:focus {
-    color: #333;  
-  }
+.met-account-flyout li a:focus {
+  color: #333;  
+}
 
-  .met-rule-{{i}} li [data-met-return] b {
-    font-weight: 900;
-  }
-  .met-rule-{{i}} li [data-met-return] mark {
-    color: {{hlcolor}};
-    background: none;
-  }
+.met-account-flyout li [data-met-return] b {
+  font-weight: 900;
+}
+.met-account-flyout li [data-met-return] mark {
+  color: {{hightlight-color}};
+  background: none;
+}
 
-  .met-rule-{{i}} li [data-met-return].met-button-varB,
-  .met-rule-{{i}} li [data-met-return].met-button-varC {
-    padding: 5px 0;
-    line-height: 15px;
-    white-space: normal;
-  }
-  .met-rule-{{i}} li.met-account-newsletters-varC,
-  .met-rule-{{i}} li.met-account-newsletters-varD,
-  .met-rule-{{i}} li.met-button-container-varD,
-  .met-rule-{{i}} li.met-button-container-varE {
-    display:none;
-  }
-  .met-rule-{{i}} li:last-child a {
-    color: #FFF;
-    background-color: #999;  
-    border-radius: 0;
-  }
-  .met-rule-{{i}}  li#met-account-manage-sub {
-    display:none; 
-  }
-  /* while displayed */
-  #uz_feedback_tab_link {
-    z-index: 0 !important;
-  }
+.met-account-flyout li [data-met-return].met-button-varB,
+.met-account-flyout li [data-met-return].met-button-varC {
+  padding: 5px 0;
+  line-height: 15px;
+  white-space: normal;
+}
+.met-account-flyout li.met-account-newsletters-varC,
+.met-account-flyout li.met-account-newsletters-varD,
+.met-account-flyout li.met-button-container-varD,
+.met-account-flyout li.met-button-container-varE {
+  display:none;
+}
+.met-account-flyout li:last-child a {
+  color: #FFF;
+  background-color: #999;  
+  border-radius: 0;
+}
 
-  /* Target mobile browsers in portrait and landscape without the use of breakpoints */
-  html[data-content-mobile] .met-rule-{{i}} li a {
-    display:inline-block;
-    width:100%;
-  }
+.met-account-flyout  li#met-account-manage-sub { /*DSS-14457*/
+  display:none; 
+}
+/* while displayed */
+#uz_feedback_tab_link {
+  z-index: 0 !important;
+}
 
-  /* DSS-12790: Allow time for click event to process before starting transition */
-  html[data-content-mobile] .met-rule-{{i}}.closed {
-    transition-delay: 0.25s;
-  }
+/* Target mobile browsers in portrait and landscape without the use of breakpoints */
+html[data-content-mobile] .met-account-flyout li a {
+  display:inline-block;
+  width:100%;
+}
+
+/* DSS-12790: Allow time for click event to process before starting transition */
+html[data-content-mobile] .met-account-flyout.closed {
+  transition-delay: 0.25s;
+}
 </style>
-
-<ul>
-  <li><a href="#" data-reg-text data-reg-handler="profileHandler"></a></li>
-  <li id="met-account-manage-sub">{{subdomain}}</li>
-  <li class="met-account-newsletters-var{{variation}}"><a href="#" data-reg-handler="newsletterHandler">Newsletters</a></li>
-  <li class="met-account-extra">{{contactUs}}</li>
-  <li class="met-button-container-var{{variation}}"><a class="met-button-var{{variation}}" href="{{subscribeUrl}}" data-met-return>{{button}}</a></li>
-  <li><a href="#" data-reg-handler="signOutHandler">LOG OUT</a></li>
-</ul>
+<div class="met-account-flyout">
+	<ul>
+	  <li><a href="#" data-reg-text data-reg-handler="profileHandler"></a></li>
+	  <li id="met-account-manage-sub">{{sub-domain}}</li>
+	  <li class="met-account-newsletters-var{{variation}}"><a href="#" data-reg-handler="newsletterHandler">Newsletters</a></li>
+	  <li class="met-account-extra">{{contact-us}}</li>
+	  <li class="met-button-container-var{{variation}}"><a class="met-button-var{{variation}}" href="{{subscribe-Url}}" data-met-return>{{button}}</a></li>
+	  <li><a href="#" data-reg-handler="signOutHandler">LOG OUT</a></li>
+	</ul>
+</div>
 
 <script>
-  trb.metering.manager.user.subscriptions(function(subs) {
+  /*DSS-14457: Start*/
+/*  trb.metering.manager.user.subscriptions(function(subs) {
     if(subs.length > 0)
-      document.querySelector('.met-rule-{{i}} li#met-account-manage-sub').style.display = 'block';
+      document.querySelector('.met-rule-${i} li#met-account-manage-sub').style.display = 'block';
+  });*/
+  /*DSS-14457: End*/  
+/*(function($) {
+  var name = registration.user.getDisplayName();
+  name = (name.length > 25) ? name.substr(0, 25) + '...' : name;
+  $('.met-rule-${i} [data-reg-text]').html(name);
+  window.services && services.trayService && services.trayService.handleCloseTray();
+
+  $('.met-rule-${i}').on('transitionend', function() {
+    var self = $(this); self.css('visibility') == 'hidden' && self.remove();
   });
-
-  (function($) {
-    var name = registration.user.getDisplayName();
-    name = (name.length > 25) ? name.substr(0, 25) + '...' : name;
-    $('.met-rule-{{i}} [data-reg-text]').html(name);
-    window.services && services.trayService && services.trayService.handleCloseTray();
-
-    $('.met-rule-{{i}').on('transitionend', function() {
-      var self = $(this); self.css('visibility') == 'hidden' && self.remove();
-    });
-  })(jQuery);
+ 
+})(jQuery); */
 </script>
