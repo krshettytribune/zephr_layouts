@@ -1,3 +1,17 @@
 <a class="ear" data-side="{{ear-side}}" href="{{subscribe-url}}" style="background:url({{image-url}}) 
 center no-repeat;background-size:100%;display:inline-block;border-radius:3px;height:{{image-height}}px;width:{{image-width}}px;color:transparent">{{ada-content}}</a>
 
+<script>
+(() => {
+	let rightElem = document.querySelector("[data-side='right']");
+  let leftElem = document.querySelector("[data-side='left']");
+  let earElem = document.querySelector(".ear");
+	if(rightElem && earElem){
+    document.querySelector("[data-reg-role='ear_right']").appendChild(earElem);
+	}
+  else if(leftElem && earElem){
+    document.querySelector("[data-reg-role='ear_left']").appendChild(earElem);
+  }
+})();
+</script>
+
