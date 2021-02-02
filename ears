@@ -4,13 +4,10 @@ center no-repeat;background-size:100%;display:inline-block;border-radius:3px;hei
 <script>
 (() => {
 	let rightElem = document.querySelector("[data-side='right']");
-  let leftElem = document.querySelector("[data-side='left']");
-  let earElem = document.querySelector(".ear");
-	if(rightElem && earElem){
-    document.querySelector("[data-reg-role='ear_right']").appendChild(earElem);
-	}
-  else if(leftElem && earElem){
-    document.querySelector("[data-reg-role='ear_left']").appendChild(earElem);
+	let leftElem = document.querySelector("[data-side='left']");
+	if(leftElem && rightElem){
+            document.querySelector("[data-reg-role='ear_right']").appendChild(rightElem);
+            document.querySelector("[data-reg-role='ear_left']").appendChild(leftElem);
   }
 })();
 </script>
