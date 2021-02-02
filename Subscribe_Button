@@ -61,5 +61,4 @@ trb.metering.manager.user.mobile(function(tablet) {
 	    document.querySelector("[data-reg-role='button_desktop']").appendChild(subButtonElem);
 	}
 })();
-  $('.bar-dss').prepend($('.dss-button'));
 </script>
