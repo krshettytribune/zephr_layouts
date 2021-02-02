@@ -57,8 +57,8 @@ trb.metering.manager.user.mobile(function(tablet) {
 (() => {
 	let elem = document.querySelector("[data-reg-role="button_desktop"]");
 	if(elem){
-    let subButtonElem = document.querySelector(".dss-button");
-    document.querySelector("[data-reg-role="button_desktop"]").appendChild(subButtonElem);
+	    let subButtonElem = document.querySelector(".dss-button");
+	    document.querySelector("[data-reg-role="button_desktop"]").appendChild(subButtonElem);
 	}
 })();
   $('.bar-dss').prepend($('.dss-button'));
