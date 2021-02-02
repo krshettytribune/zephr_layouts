@@ -170,6 +170,14 @@
 	</div>
 </div>
 <script>
+	(() => {
+	let bodyElem = document.querySelector("body");
+	if(bodyElem){
+	let toasterElem = document.querySelector(".met-footer-toast");
+	document.querySelector("body").appendChild(toasterElem);
+		
+	}
+})();
 //    (function() {
 //    trb.metering.manager.user.track(function(data) {
 //        var rules = trb.registration.config.get('rules');
@@ -177,6 +185,6 @@
 //      }); 
 //  })();
   
-  function dummyMethod(){}
+//  function dummyMethod(){}
   // needs better logic here
 </script>
