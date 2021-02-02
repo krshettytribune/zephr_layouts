@@ -124,6 +124,13 @@ html[data-content-mobile] .met-account-flyout.closed {
 </div>
 
 <script>
+(() => {
+	let elem = document.querySelector("[data-reg-role="navigation"]");
+	if(elem){
+		let accFlyoutElem = document.querySelector(".met-account-flyout");
+		document.querySelector("[data-reg-role="navigation"]").appendChild(accFlyoutElem);
+	}
+})();
   /*DSS-14457: Start*/
 /*  trb.metering.manager.user.subscriptions(function(subs) {
     if(subs.length > 0)
