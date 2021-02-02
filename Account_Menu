@@ -125,10 +125,10 @@ html[data-content-mobile] .met-account-flyout.closed {
 
 <script>
 (() => {
-	let elem = document.querySelector("[data-reg-role="navigation"]");
+	let elem = document.querySelector("[data-reg-role='navigation']");
 	if(elem){
 		let accFlyoutElem = document.querySelector(".met-account-flyout");
-		document.querySelector("[data-reg-role="navigation"]").appendChild(accFlyoutElem);
+		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
 	}
 })();
   /*DSS-14457: Start*/
