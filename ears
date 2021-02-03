@@ -4,13 +4,11 @@ center no-repeat;background-size:100%;display:inline-block;border-radius:3px;hei
 <script>
 (() => {
 console.log("-----------loading Ears---------------")
-	let earLeft=document.querySelector("[data-reg-role='ear_left']").dataset.regRole.split('_')[1];
-	let earRight=document.querySelector("[data-reg-role='ear_right']").dataset.regRole.split('_')[1]
 	let earSide = document.querySelector("[data-side='{{ear-side}}']");
-	if(earSide.dataset.side === earLeft){
+	if(earSide.dataset.side === "left"){
             document.querySelector("[data-reg-role='ear_left']").appendChild(earSide);
   	} 
-	if(earSide.dataset.side === earRight){
+	if(earSide.dataset.side === "right"){
             document.querySelector("[data-reg-role='ear_right']").appendChild(earSide);
   	}
 })();
