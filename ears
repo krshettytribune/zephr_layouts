@@ -8,12 +8,12 @@ console.log("-----------loading Ears---------------")
 	//let leftElem = document.querySelector("[data-side='left']");
 	let earLeft=document.querySelector("[data-reg-role='ear_left']").dataset.regRole.split('_')[1];
 	let earRight=document.querySelector("[data-reg-role='ear_right']").dataset.regRole.split('_')[1]
-	let earSide = document.querySelector("[data-side='{{ear-side}}']").dataset.side;
-	if(earSide === earLeft){
+	let earSide = document.querySelector("[data-side='{{ear-side}}']");
+	if(earSide.dataset.side === earLeft){
            // document.querySelector("[data-reg-role='ear_right']").appendChild(rightElem);
             document.querySelector("[data-reg-role='ear_left']").appendChild(earSide);
   	} 
-	if(earSide === earRight){
+	if(earSide.dataset.side === earRight){
             document.querySelector("[data-reg-role='ear_right']").appendChild(earSide);
            // document.querySelector("[data-reg-role='ear_left']").appendChild(leftElem);
   	}
