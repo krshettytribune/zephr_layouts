@@ -6,12 +6,14 @@ center no-repeat;background-size:100%;display:inline-block;border-radius:3px;hei
 console.log("-----------loading Ears---------------")
 	//let rightElem = document.querySelector("[data-side='right']");
 	//let leftElem = document.querySelector("[data-side='left']");
+	let earLeft=document.querySelector("[data-reg-role='ear_left']").dataset.regRole.split('_')[1];
+	let earRight=document.querySelector("[data-reg-role='ear_right']").dataset.regRole.split('_')[1]
 	let earSide = document.querySelector("[data-side='{{ear-side}}']").dataset.side;
-	if(earSide === "left"){
+	if(earSide === earLeft){
            // document.querySelector("[data-reg-role='ear_right']").appendChild(rightElem);
             document.querySelector("[data-reg-role='ear_left']").appendChild(earSide);
   	} 
-	if(earSide === "right"){
+	if(earSide === earRight){
             document.querySelector("[data-reg-role='ear_right']").appendChild(earSide);
            // document.querySelector("[data-reg-role='ear_left']").appendChild(leftElem);
   	}
