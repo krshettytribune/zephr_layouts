@@ -80,7 +80,7 @@
   }
 }
 </style>
-<div class="met-flyout met-rule-toast" style="display:block; border: 1px solid blue;background-color: yellow;">
+<div class="met-flyout met-rule-toast">
 	<div class="met-toast-close{{closeable}}">
 	  <a href="#" class="met-flyout-close"></a>
 	</div>
