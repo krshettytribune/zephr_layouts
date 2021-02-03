@@ -1,12 +1,12 @@
 <style>
-.met-rule-toast {
+.met-header-toast {
   box-shadow: 0 1px 4px 0 #9B9B9B;
   -webkit-transition: -webkit-transform 375ms cubic-bezier(0.2, 0.84, 0.46, 0.99);
   -moz-transition: -moz-transform 375ms cubic-bezier(0.2, 0.84, 0.46, 0.99);
   transition: transform 375ms cubic-bezier(0.2, 0.84, 0.46, 0.99);
   z-index: 30;
 }
-.met-rule-toast.closed {
+.met-header-toast.closed {
   -webkit-transform: translateY(-150%);
   -moz-transform: translateY(-150%);
   -ms-transform: translateY(-150%);
@@ -16,7 +16,7 @@
   -moz-transition: -moz-transform 0.15s linear;
   transition: transform 0.15s linear;
 }
-.met-rule-toast [data-met-return] {
+.met-header-toast [data-met-return] {
   text-align: center;
   font: 400 14px/40px {{font}}, Arial, sans-serif;
   text-decoration: none;
@@ -26,20 +26,20 @@
   color: {{default-color}};
   letter-spacing: 1px;
 }
-.met-rule-toast [data-met-return] b {
+.met-header-toast [data-met-return] b {
   font-weight: 700;
 }
-.met-rule-toast [data-met-return] mark {
+.met-header-toast [data-met-return] mark {
   color: {{highlight-color}};
   background: none;
 }
-.met-rule-toast .met-toast-close0 {
+.met-header-toast .met-toast-close0 {
   display: none;
 }
-.met-rule-toast .met-toast-close2 {
+.met-header-toast .met-toast-close2 {
   position: relative;
 }
-.met-rule-toast .met-flyout-close {
+.met-header-toast .met-flyout-close {
     cursor: pointer;
     display: table-cell;
     position: absolute;
@@ -49,7 +49,7 @@
     height: 16px;
 }
   
-.met-rule-toast .met-flyout-close::after, .met-rule-toast .met-flyout-close::before {
+.met-header-toast .met-flyout-close::after, .met-header-toast .met-flyout-close::before {
     content: '';
     position: absolute;
     height: 4px;
@@ -58,7 +58,7 @@
     width: 90%;
 }
   
-.met-rule-toast .met-flyout-close::before {
+.met-header-toast .met-flyout-close::before {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -66,7 +66,7 @@
     transform: rotate(45deg);
 }
   
-.met-rule-toast .met-flyout-close::after {
+.met-header-toast .met-flyout-close::after {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -75,12 +75,12 @@
 }
 
 @media only screen and (min-width: 548px) {
-  .met-rule-toast {
+  .met-header-toast {
     display: none;
   }
 }
 </style>
-<div class="met-flyout met-rule-toast">
+<div class="met-flyout met-header-toast">
 	<div class="met-toast-close{{closeable}}">
 	  <a href="#" class="met-flyout-close"></a>
 	</div>
@@ -90,16 +90,16 @@
 (() => {
 	let elem = document.querySelector("[data-reg-role='prompt']");
 	if(elem){
-	let toasterElem = document.querySelector(".met-rule-toast");
+	let toasterElem = document.querySelector(".met-header-toast");
 	document.querySelector("[data-reg-role='prompt']").appendChild(toasterElem);
 		if(elem.hasAttribute("data-dss-condense") && elem.getAttribute("data-dss-condense")==="true"){
-		  document.querySelector(".met-rule-toast").style.height="40px";
+		  document.querySelector(".met-header-toast").style.height="40px";
 		  document.querySelector(".met-flyout-close").style.display="none";  
 	       }
 	}
 })();
  $('.met-flyout-close').click(function() {
          	console.log('-----close button clicked----------');
-		document.querySelector(".met-rule-toast").style.display="none"
+		document.querySelector(".met-header-toast").style.display="none"
  });
 </script>
