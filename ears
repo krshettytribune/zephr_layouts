@@ -3,6 +3,7 @@ center no-repeat;background-size:100%;display:inline-block;border-radius:3px;hei
 
 <script>
 (() => {
+console.log("-----------loading Ears---------------")
 	//let rightElem = document.querySelector("[data-side='right']");
 	//let leftElem = document.querySelector("[data-side='left']");
 	let earSide = document.querySelector("[data-side='{{ear-side}}']").dataset.side;
