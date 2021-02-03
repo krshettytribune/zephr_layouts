@@ -80,21 +80,18 @@
   }
 }
 </style>
-<div data-reg-role="prompt">
-	<div class="met-flyout met-rule-toast" style="display:block; border: 1px solid blue;
-	  background-color: yellow;">
-		<div class="met-toast-close{{closeable}}">
-		  <a href="#" class="met-flyout-close"></a>
-		</div>
-		<a href="{{subscribe-url}}" data-met-return><b><mark>{{tagline}}</mark></b>&nbsp;{{description}}</a>
+<div class="met-flyout met-rule-toast" style="display:block; border: 1px solid blue;background-color: yellow;">
+	<div class="met-toast-close{{closeable}}">
+	  <a href="#" class="met-flyout-close"></a>
 	</div>
+	<a href="{{subscribe-url}}" data-met-return><b><mark>{{tagline}}</mark></b>&nbsp;{{description}}</a>
 </div>
 <script>
 (() => {
 	let elem = document.querySelector("[data-reg-role='prompt']");
 	if(elem){
 	let toasterElem = document.querySelector(".met-rule-toast");
-	//document.querySelector("[data-reg-role='prompt']").appendChild(toasterElem);
+	document.querySelector("[data-reg-role='prompt']").appendChild(toasterElem);
 		if(elem.hasAttribute("data-dss-condense") && elem.getAttribute("data-dss-condense")==="true"){
 		  document.querySelector(".met-rule-toast").style.height="40px";
 		  document.querySelector(".met-flyout-close").style.display="none";  
