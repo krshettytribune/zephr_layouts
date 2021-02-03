@@ -5,7 +5,7 @@ center no-repeat;background-size:100%;display:inline-block;border-radius:3px;hei
 (() => {
 	//let rightElem = document.querySelector("[data-side='right']");
 	//let leftElem = document.querySelector("[data-side='left']");
-	let earSide = document.querySelector("[data-side='{{ear-side}}']");
+	let earSide = document.querySelector("[data-side='{{ear-side}}']").dataset.side;
 	if(earSide === "left"){
            // document.querySelector("[data-reg-role='ear_right']").appendChild(rightElem);
             document.querySelector("[data-reg-role='ear_left']").appendChild(earSide);
