@@ -98,4 +98,8 @@
 	       }
 	}
 })();
+ $('.met-flyout-close').click(function() {
+         	console.log('-----close button clicked----------');
+		document.querySelector(".met-rule-toast").style.display="none"
+ });
 </script>
