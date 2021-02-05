@@ -68,6 +68,9 @@ trb.metering.manager.user.mobile(function(tablet) {
 	}else if(placementTarget === 'button_mobile'){
 	   console.log("--------------button_mobile-------------");
 	    document.querySelector("[data-reg-role='button_mobile']").appendChild(subButtonElem);
+	}else if(placementTarget === 'trial'){
+	    console.log("--------------Topic Flyout-------------");
+	    document.querySelector("[data-reg-role='trial']").appendChild(subButtonElem);
 	}
 })();
 </script>
