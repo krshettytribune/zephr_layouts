@@ -62,6 +62,9 @@ trb.metering.manager.user.mobile(function(tablet) {
 	if(placementTarget === 'button_desktop'){
 	    console.log("--------------button_desktop-------------");
 	    document.querySelector("[data-reg-role='button_desktop']").appendChild(subButtonElem);
+	}else if(placementTarget === 'button_tablet'){
+	   console.log("--------------button_tablet-------------");
+	    document.querySelector("[data-reg-role='button_tablet']").appendChild(subButtonElem);
 	}else if(placementTarget === 'button_mobile'){
 	   console.log("--------------button_mobile-------------");
 	    document.querySelector("[data-reg-role='button_mobile']").appendChild(subButtonElem);
