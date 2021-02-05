@@ -125,6 +125,9 @@ html[data-content-mobile] .met-account-flyout.closed {
 
 <script>
 (() => {
+	console.log('----Loading Account Flyout-----------');
+	let name = registration.user.getDisplayName();
+	console.log('name', name);
 	let elem = document.querySelector("[data-reg-role='navigation']");
 	if(elem){
 		let accFlyoutElem = document.querySelector(".met-account-flyout");
