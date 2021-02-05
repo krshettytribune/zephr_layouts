@@ -55,6 +55,8 @@ trb.metering.manager.user.mobile(function(tablet) {
 -->
 <script>
 (() => {
+	console.log("--------------loading Subscribe Button-------------");
+	console.log("--------------Placement Target :{{placement-target}}-------------");
 	let elem = document.querySelector("[data-reg-role='button_desktop']");
 	if(elem){
 	    let subButtonElem = document.querySelector(".dss-button");
