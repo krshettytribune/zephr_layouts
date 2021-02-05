@@ -150,6 +150,10 @@ html[data-content-mobile] .met-account-flyout.closed {
   console.log('---transitionend---')
     var self = $(this); self.css('visibility') == 'hidden' && self.remove();
   });
+   $('[data-reg-handler="toggleNavigation"]').click(function() {
+         	console.log('-----close button clicked----------');
+		document.querySelector(".met-account-flyout").style.display="none"
+    }
  
 })(jQuery);
 </script>
