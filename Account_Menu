@@ -140,15 +140,15 @@ html[data-content-mobile] .met-account-flyout.closed {
       document.querySelector('.met-rule-${i} li#met-account-manage-sub').style.display = 'block';
   });*/
   /*DSS-14457: End*/  
-/*(function($) {
+(function($) {
   var name = registration.user.getDisplayName();
   name = (name.length > 25) ? name.substr(0, 25) + '...' : name;
-  $('.met-rule-${i} [data-reg-text]').html(name);
+  $('.met-account-flyout [data-reg-text]').html(name);
   window.services && services.trayService && services.trayService.handleCloseTray();
 
-  $('.met-rule-${i}').on('transitionend', function() {
+  $('.met-account-flyout').on('transitionend', function() {
     var self = $(this); self.css('visibility') == 'hidden' && self.remove();
   });
  
-})(jQuery); */
+})(jQuery);
 </script>
