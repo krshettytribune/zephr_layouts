@@ -135,10 +135,10 @@ html[data-content-mobile] .met-account-flyout.closed {
 	}
 })();
   /*DSS-14457: Start*/
-/*  trb.metering.manager.user.subscriptions(function(subs) {
+  trb.metering.manager.user.subscriptions(function(subs) {
     if(subs.length > 0)
-      document.querySelector('.met-rule-${i} li#met-account-manage-sub').style.display = 'block';
-  });*/
+      document.querySelector('.met-account-flyout li#met-account-manage-sub').style.display = 'block';
+  });
   /*DSS-14457: End*/  
 (function($) {
   var name = registration.user.getDisplayName();
@@ -147,6 +147,7 @@ html[data-content-mobile] .met-account-flyout.closed {
   window.services && services.trayService && services.trayService.handleCloseTray();
 
   $('.met-account-flyout').on('transitionend', function() {
+  console.log('---transitionend---')
     var self = $(this); self.css('visibility') == 'hidden' && self.remove();
   });
  
