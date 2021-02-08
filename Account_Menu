@@ -133,10 +133,10 @@ html[data-content-mobile] .met-account-flyout.closed {
 		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
 		if(accFlyoutElem.style.display === "none"){
 		console.log("----------display Account flyout-----------");
-			document.querySelector(".met-account-flyout").style.display = "block !important";
+			document.querySelector(".met-account-flyout").style.display = "block";
 		}else{
 		console.log("----------display not Account flyout-----------");
-			document.querySelector(".met-account-flyout").style.display = "none !important";
+			document.querySelector(".met-account-flyout").style.display = "none";
 		}
   	});
   }
