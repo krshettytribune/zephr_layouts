@@ -112,7 +112,7 @@ html[data-content-mobile] .met-account-flyout.closed {
   transition-delay: 0.25s;
 }
 </style>
-<div class="met-account-flyout" style="display:'none !important'">
+<div class="met-account-flyout" style="display:none !important">
 	<ul>
 	  <li><a href="#" data-reg-text data-reg-handler="profileHandler"></a></li>
 	  <li id="met-account-manage-sub"><a href="{{sub-domain}}">Manage my Subscription</a></li>
@@ -124,7 +124,7 @@ html[data-content-mobile] .met-account-flyout.closed {
 </div>
 
 <script>
-  /*DSS-14457: Start*/
+(() => {
   let elem = document.querySelector("[data-reg-role='navigation']");
   if(elem){
   	document.querySelector("[data-reg-handler='toggleNavigation']").addEventListener('click',function(){
@@ -140,6 +140,8 @@ html[data-content-mobile] .met-account-flyout.closed {
 		}
   	});
   }
+  })();
+    /*DSS-14457: Start*/
   trb.metering.manager.user.subscriptions(function(subs) {
     if(subs.length > 0)
       document.querySelector('.met-account-flyout li#met-account-manage-sub').style.display = 'block';
@@ -155,15 +157,5 @@ html[data-content-mobile] .met-account-flyout.closed {
   console.log('---transitionend---')
     var self = $(this); self.css('visibility') == 'hidden' && self.remove();
   });
-   $('[data-reg-handler="toggleNavigation"]').click(function() {
-   let elem = document.querySelector("[data-reg-role='navigation']");
-	if(elem){
-		let accFlyoutElem = document.querySelector(".met-account-flyout");
-		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
-	}
-	console.log('-----close button clicked----------');
-	document.querySelector(".met-account-flyout").style.display="none";
-     });
- 
 })(jQuery);
 </script>
