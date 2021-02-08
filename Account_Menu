@@ -112,7 +112,7 @@ html[data-content-mobile] .met-account-flyout.closed {
   transition-delay: 0.25s;
 }
 </style>
-<div class="met-account-flyout">
+<div class="met-account-flyout" style="display:'none'">
 	<ul>
 	  <li><a href="#" data-reg-text data-reg-handler="profileHandler"></a></li>
 	  <li id="met-account-manage-sub"><a href="{{sub-domain}}">Manage my Subscription</a></li>
@@ -124,17 +124,22 @@ html[data-content-mobile] .met-account-flyout.closed {
 </div>
 
 <script>
-(() => {
-	console.log('----Loading Account Flyout-----------');
-	let name = registration.user.getDisplayName();
-	console.log('name', name);
-	let elem = document.querySelector("[data-reg-role='navigation']");
-	if(elem){
-		let accFlyoutElem = document.querySelector(".met-account-flyout");
-		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
-	}
-})();
   /*DSS-14457: Start*/
+  let elem = document.querySelector("[data-reg-role='navigation']");
+  if(elem){
+  	document.querySelector("[data-reg-role='navigation']").addEventListener('click',function(){
+	console.log("----------loading Account flyout-----------");
+  		let accFlyoutElem = document.querySelector(".met-account-flyout");
+		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
+		if(accFlyoutElem.style.display === "none"){
+		console.log("----------display Account flyout-----------");
+			document.querySelector(".met-account-flyout").style.display = "block";
+		}else{
+		console.log("----------display not Account flyout-----------");
+			document.querySelector(".met-account-flyout").style.display = "none";
+		}
+  	});
+  }
   trb.metering.manager.user.subscriptions(function(subs) {
     if(subs.length > 0)
       document.querySelector('.met-account-flyout li#met-account-manage-sub').style.display = 'block';
@@ -151,8 +156,13 @@ html[data-content-mobile] .met-account-flyout.closed {
     var self = $(this); self.css('visibility') == 'hidden' && self.remove();
   });
    $('[data-reg-handler="toggleNavigation"]').click(function() {
-         	console.log('-----close button clicked----------');
-		document.querySelector(".met-account-flyout").style.display="none"
+   let elem = document.querySelector("[data-reg-role='navigation']");
+	if(elem){
+		let accFlyoutElem = document.querySelector(".met-account-flyout");
+		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
+	}
+	console.log('-----close button clicked----------');
+	document.querySelector(".met-account-flyout").style.display="none";
      });
  
 })(jQuery);
