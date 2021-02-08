@@ -112,7 +112,7 @@ html[data-content-mobile] .met-account-flyout.closed {
   transition-delay: 0.25s;
 }
 </style>
-<div class="met-account-flyout" style="display:'none'">
+<div class="met-account-flyout" style="display:'none !important'">
 	<ul>
 	  <li><a href="#" data-reg-text data-reg-handler="profileHandler"></a></li>
 	  <li id="met-account-manage-sub"><a href="{{sub-domain}}">Manage my Subscription</a></li>
@@ -127,16 +127,16 @@ html[data-content-mobile] .met-account-flyout.closed {
   /*DSS-14457: Start*/
   let elem = document.querySelector("[data-reg-role='navigation']");
   if(elem){
-  	document.querySelector("[data-reg-role='navigation']").addEventListener('click',function(){
+  	document.querySelector("[data-reg-handler='toggleNavigation']").addEventListener('click',function(){
 	console.log("----------loading Account flyout-----------");
   		let accFlyoutElem = document.querySelector(".met-account-flyout");
 		document.querySelector("[data-reg-role='navigation']").appendChild(accFlyoutElem);
 		if(accFlyoutElem.style.display === "none"){
 		console.log("----------display Account flyout-----------");
-			document.querySelector(".met-account-flyout").style.display = "block";
+			document.querySelector(".met-account-flyout").style.display = "block !important";
 		}else{
 		console.log("----------display not Account flyout-----------");
-			document.querySelector(".met-account-flyout").style.display = "none";
+			document.querySelector(".met-account-flyout").style.display = "none !important";
 		}
   	});
   }
